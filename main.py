@@ -11,7 +11,7 @@ for i in range(50):
     username = fake.name()
     age = fake.numerify(text = '%#')
     phone_number = fake.phone_number()
-    user_skills = fake.sentence(ext_word_list=skills)
+    user_skills = fake.random_choices(elements=skills, length = 1)
     db.employees.insert_one({
         "name": username,
         "age": age,
