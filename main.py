@@ -45,6 +45,7 @@ for i in range(120):
     iban = fake.iban()
     swift = fake.swift()
     email = fake.ascii_email()
+
     db.clients.insert_one({
         "id": id,
         "name": username,
@@ -54,6 +55,14 @@ for i in range(120):
         "address": address,
         "iban": iban,
         "swift": swift,
-        "email": email  
+        "email": email
     })
 
+for i in range(100):
+    id = fake.numerify(text='###')
+    number = fake.numerify(text = '###')
+
+    db.dev.insert_one({
+        "id": id,
+        "number": number
+    })
